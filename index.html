@@ -12,7 +12,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brandGreen: '#78c846', /* Color verde basado en tu logo/whatsapp */
+                        brandGreen: '#78c846', /* Color verde basado en tu logo */
                         brandDark: '#1a202c',
                     }
                 }
@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body class="font-sans text-gray-800 antialiased bg-gray-50">
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
 
     <div class="bg-white border-b text-sm py-2 hidden md:block">
         <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
@@ -39,7 +39,7 @@
             </div>
             <div class="flex space-x-6 items-center text-gray-600 font-medium">
                 <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
-                <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soportel@indissa.com</span>
+                <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
                 <a href="#" class="bg-brandGreen text-white px-4 py-1.5 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
                     <i class="fab fa-whatsapp text-lg mr-2"></i> Whatsapp
                 </a>
@@ -63,7 +63,7 @@
         </div>
     </nav>
 
-    <header class="hero-bg h-[75vh] flex items-center text-center px-4">
+    <header class="hero-bg py-32 md:py-48 flex items-center text-center px-4">
         <div class="container mx-auto max-w-5xl">
             <h2 class="text-brandGreen font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-lg">
                 Mejoramos la eficiencia y productividad de tu empresa
@@ -80,15 +80,72 @@
         </div>
     </header>
 
-    <section class="py-24 bg-white text-center">
-        <div class="container mx-auto px-4 max-w-4xl">
+    <section class="py-20 bg-white text-center">
+        <div class="container mx-auto px-4 max-w-5xl">
             <h3 class="text-brandGreen font-bold tracking-widest mb-6 text-xl uppercase">Gear System</h3>
-            <div class="w-24 h-1 bg-brandGreen mx-auto mb-8 rounded"></div>
-            <p class="text-gray-600 text-lg leading-relaxed font-light">
-                Es una aplicación que busca satisfacer todas las necesidades administrativas empresariales. Fue desarrollada durante el año 1994 dentro de las instalaciones, evolucionando constantemente para ofrecer soluciones robustas y adaptadas a la actualidad tecnológica.
+            <div class="w-24 h-1 bg-brandGreen mx-auto mb-10 rounded"></div>
+            <p class="text-gray-500 text-lg leading-relaxed font-light text-justify md:text-center">
+                Es una aplicación que busca satisfacer todas las necesidades administrativas empresariales. Fue desarrollada durante el año 1994 dentro de las instalaciones de INGUASOFT (Industria Guatemalteca de Software) y se basó en el sistema operativo Unix. Durante el año 1997, debido a la implementación de nuevas tecnologías, el sistema migra a un ambiente gráfico desarrollado en Visual Basic, generando así, la nueva versión de un sistema administrativo orientado a cualquier tipo de empresa, convirtiéndose en una herramienta rápida y exacta con la información contable y financiera. Finalmente, se integra el producto Gear online, a partir del año 2007, el cual se desarrolló para apoyar la necesidad de conectividad, así como también, para obtener bases de datos integradas y en línea desde cualquier parte del mundo, convirtiendo a este, en un producto de mayor énfasis en la demanda de software.
             </p>
         </div>
     </section>
 
-</body>
-</html>
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+                
+                <div class="md:col-span-1 text-center md:text-left">
+                    <h2 class="text-4xl font-bold text-brandGreen mb-4">Gear Online</h2>
+                    <p class="text-gray-500 font-light">Soluciones modulares integradas para el control total de tu empresa.</p>
+                </div>
+
+                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-10">
+                    
+                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="fas fa-truck text-4xl text-brandGreen"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Area Comercial</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Cuentas, Inventario, facturación y cuentas por cobrar.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="fas fa-money-bill-transfer text-4xl text-brandGreen"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Area Financiera</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Contabilidad, bancos, cuentas por pagar y presupuesto.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="far fa-user text-4xl text-brandGreen"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Recurso Humano</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Nómina mensual, quincenal, semanal, aguinaldo, Bono 14.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="fab fa-android text-4xl text-brandGreen"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Facturación y cobros</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed">Registro de facturas, cobros y certificaciones en línea, enlazado con el sistema central y depósitos.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="flex-grow"></div>
+
+    <footer class="bg-[#f8f9fa] border-t border-gray-200 pt-
