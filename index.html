@@ -12,8 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        brandGreen: '#78c846', /* Color verde basado en tu logo */
-                        brandDark: '#1a202c',
+                        brandGreen: '#78c846',
+                        darkBg: '#0b1121', /* Fondo premium oscuro unificado */
+                        cardBg: '#111827', /* Fondo de tarjetas */
                     }
                 }
             }
@@ -21,124 +22,141 @@
     </script>
     
     <style>
-        /* Fondo con overlay oscuro para resaltar el texto blanco */
+        /* Patrón de cuadrícula tecnológica idéntico al de nosotros.html */
+        .tech-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+        }
+        /* Resplandor verde sutil para secciones destacadas */
+        .glow {
+            box-shadow: 0 0 40px -15px #78c846;
+        }
+        /* Imagen del Hero con overlay oscuro integrado al diseño */
         .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(11, 17, 33, 0.85), rgba(11, 17, 33, 0.95)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 antialiased bg-slate-50 flex flex-col min-h-screen">
+<body class="font-sans text-slate-300 antialiased bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white">
 
-    <div class="bg-white border-b text-sm py-2 hidden md:block">
+    <div class="bg-slate-950/60 border-b border-white/5 text-xs py-2 hidden md:block">
         <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
-            <div class="flex space-x-6 text-slate-500 font-medium">
+            <div class="flex space-x-6 text-slate-400 font-medium">
                 <span class="flex items-center"><i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes</span>
                 <span class="flex items-center"><i class="far fa-comment-dots text-brandGreen mr-2"></i> En Línea 24/7 Servicio al cliente</span>
             </div>
-            <div class="flex space-x-6 items-center text-slate-600 font-medium">
+            <div class="flex space-x-6 items-center text-slate-400 font-medium">
                 <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
                 <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
-                <a href="#" class="bg-brandGreen text-white px-4 py-1.5 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
-                    <i class="fab fa-whatsapp text-lg mr-2"></i> Whatsapp
+                <a href="#" class="bg-brandGreen text-white px-4 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
+                    <i class="fab fa-whatsapp text-sm mr-2"></i> Whatsapp
                 </a>
             </div>
         </div>
     </div>
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="bg-darkBg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
-            <div class="flex items-center">
-                <a href="#" class="inline-block">
-                    <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-12 w-auto max-w-full">
+            <div class="flex items-center bg-white p-1.5 rounded-lg shadow-sm">
+                <a href="index.html" class="inline-block">
+                    <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
                 </a>
             </div>
             
             <div class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
-                <a href="#" class="text-brandGreen border-b-2 border-brandGreen pb-1">INICIO</a>
-                <a href="#" class="text-slate-600 hover:text-brandGreen transition pb-1">NOSOTROS</a>
-                <a href="#" class="text-slate-600 hover:text-brandGreen transition pb-1">PRODUCTOS</a>
-                <a href="#" class="text-slate-600 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
-                <a href="#" class="text-slate-600 hover:text-brandGreen transition pb-1">CONTACTO</a>
+                <a href="index.html" class="text-brandGreen border-b-2 border-brandGreen pb-1">INICIO</a>
+                <a href="nosotros.html" class="text-slate-400 hover:text-brandGreen transition pb-1">NOSOTROS</a>
+                <a href="#" class="text-slate-400 hover:text-brandGreen transition pb-1">PRODUCTOS</a>
+                <a href="#" class="text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
+                <a href="#" class="text-slate-400 hover:text-brandGreen transition pb-1">CONTACTO</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg py-32 md:py-48 flex items-center text-center px-4">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-brandGreen font-bold tracking-[0.2em] uppercase mb-4 text-sm md:text-lg">
+    <header class="hero-bg py-32 md:py-44 flex items-center text-center px-4 relative">
+        <div class="absolute inset-0 tech-grid opacity-20 pointer-events-none"></div>
+        
+        <div class="container mx-auto max-w-5xl relative z-10">
+            <h2 class="text-brandGreen font-bold tracking-[0.2em] uppercase mb-4 text-xs md:text-sm">
                 Mejoramos la eficiencia y productividad de tu empresa
             </h2>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
-                Desarrollo de Software
+                Desarrollo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Software</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-10 font-light">
+            <p class="text-xl md:text-2xl text-slate-400 mb-10 font-light">
                 Rapidez, Calidad y Servicio
             </p>
-            <a href="#" class="bg-brandGreen text-white px-8 py-3.5 rounded-md text-lg font-bold hover:bg-green-600 transition shadow-lg inline-block">
+            <a href="#" class="bg-brandGreen text-white px-8 py-3.5 rounded-xl text-base font-bold hover:bg-green-500 transition shadow-[0_0_30px_rgba(120,200,70,0.3)] inline-block">
                 Nuestros Servicios
             </a>
         </div>
     </header>
 
-    <section class="py-20 bg-white text-center">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h3 class="text-brandGreen font-bold tracking-widest mb-6 text-xl uppercase">Gear System</h3>
-            <div class="w-24 h-1 bg-brandGreen mx-auto mb-10 rounded"></div>
-            <p class="text-slate-500 text-lg leading-relaxed font-light text-justify md:text-center">
-                Es una aplicación que busca satisfacer todas las necesidades administrativas empresariales. Fue desarrollada durante el año 1994 dentro de las instalaciones de INGUASOFT (Industria Guatemalteca de Software) y se basó en el sistema operativo Unix. Durante el año 1997, debido a la implementación de nuevas tecnologías, el sistema migra a un ambiente gráfico desarrollado en Visual Basic, generando así, la nueva versión de un sistema administrativo orientado a cualquier tipo de empresa, convirtiéndose en una herramienta rápida y exacta con la información contable y financiera. Finalmente, se integra el producto Gear online, a partir del año 2007, el cual se desarrolló para apoyar la necesidad de conectividad, así como también, para obtener bases de datos integradas y en línea desde cualquier parte del mundo, convirtiendo a este, en un producto de mayor énfasis en la demanda de software.
+    <section class="py-24 bg-darkBg relative overflow-hidden border-b border-white/5">
+        <div class="absolute inset-0 tech-grid opacity-10 pointer-events-none"></div>
+        <div class="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+            <h3 class="text-brandGreen font-bold tracking-widest mb-4 text-xl uppercase">Gear System</h3>
+            <div class="w-16 h-1 bg-brandGreen mx-auto mb-10 rounded-full"></div>
+            <p class="text-slate-400 text-lg leading-relaxed font-light text-justify md:text-center max-w-4xl mx-auto">
+                Es una aplicación que busca satisfacer todas las necesidades administrativas empresariales. Fue desarrollada durante el año 1994 dentro de las instalaciones de <strong class="text-white font-medium">INGUASOFT (Industria Guatemalteca de Software)</strong> y se basó en el sistema operativo Unix. Durante el año 1997, debido a la implementación de nuevas tecnologías, el sistema migra a un ambiente gráfico desarrollado en Visual Basic, generando así, la nueva versión de un sistema administrativo orientado a cualquier tipo de empresa, convirtiéndose en una herramienta rápida y exacta con la información contable y financiera. Finalmente, se integra el producto Gear online, a partir del año 2007, el cual se desarrolló para apoyar la necesidad de conectividad, así como también, para obtener bases de datos integradas y en línea desde cualquier parte del mundo, convirtiendo a este, en un producto de mayor énfasis en la demanda de software.
             </p>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50">
+    <section class="py-24 bg-slate-900/40 relative">
         <div class="container mx-auto px-4 max-w-7xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                 
-                <div class="md:col-span-1 text-center md:text-left">
-                    <h2 class="text-4xl font-bold text-brandGreen mb-4">Gear Online</h2>
-                    <p class="text-slate-500 font-light">Soluciones modulares integradas para el control total de tu empresa.</p>
+                <div class="text-center lg:text-left">
+                    <span class="text-brandGreen font-bold tracking-widest uppercase text-xs block mb-2">Ecosistema Global</span>
+                    <h2 class="text-4xl font-extrabold text-white mb-4 tracking-tight">Gear Online</h2>
+                    <p class="text-slate-400 font-light leading-relaxed">Soluciones modulares integradas para el control operativo y financiero total de tu empresa.</p>
                 </div>
 
-                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     
-                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="fas fa-truck text-4xl text-brandGreen"></i>
+                    <div class="flex items-start bg-cardBg p-6 rounded-2xl border border-slate-800/80 hover:border-brandGreen/40 transition duration-300">
+                        <div class="flex-shrink-0 mr-4 w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center border border-brandGreen/10">
+                            <i class="fas fa-truck text-xl text-brandGreen"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-slate-800 mb-2">Area Comercial</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Cuentas, Inventario, facturación y cuentas por cobrar.</p>
+                            <h4 class="text-lg font-bold text-white mb-1">Area Comercial</h4>
+                            <p class="text-slate-400 text-sm font-light leading-relaxed">Cuentas, Inventario, facturación y cuentas por cobrar.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="fas fa-money-check-dollar text-4xl text-brandGreen"></i> </div>
+                    <div class="flex items-start bg-cardBg p-6 rounded-2xl border border-slate-800/80 hover:border-brandGreen/40 transition duration-300">
+                        <div class="flex-shrink-0 mr-4 w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center border border-brandGreen/10">
+                            <i class="fas fa-money-check-dollar text-xl text-brandGreen"></i>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-bold text-slate-800 mb-2">Area Financiera</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Contabilidad, bancos, cuentas por pagar y presupuesto.</p>
+                            <h4 class="text-lg font-bold text-white mb-1">Area Financiera</h4>
+                            <p class="text-slate-400 text-sm font-light leading-relaxed">Contabilidad, bancos, cuentas por pagar y presupuesto.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="far fa-user text-4xl text-brandGreen"></i>
+                    <div class="flex items-start bg-cardBg p-6 rounded-2xl border border-slate-800/80 hover:border-brandGreen/40 transition duration-300">
+                        <div class="flex-shrink-0 mr-4 w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center border border-brandGreen/10">
+                            <i class="far fa-user text-xl text-brandGreen"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-slate-800 mb-2">Recurso Humano</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Nómina mensual, quincenal, semanal, aguinaldo, Bono 14.</p>
+                            <h4 class="text-lg font-bold text-white mb-1">Recurso Humano</h4>
+                            <p class="text-slate-400 text-sm font-light leading-relaxed">Nómina mensual, quincenal, semanal, aguinaldo, Bono 14.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="fab fa-android text-4xl text-brandGreen"></i>
+                    <div class="flex items-start bg-cardBg p-6 rounded-2xl border border-slate-800/80 hover:border-brandGreen/40 transition duration-300">
+                        <div class="flex-shrink-0 mr-4 w-12 h-12 bg-brandGreen/10 rounded-xl flex items-center justify-center border border-brandGreen/10">
+                            <i class="fab fa-android text-xl text-brandGreen"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-slate-800 mb-2">Facturación y cobros</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Registro de facturas, cobros y certificaciones en línea, enlazado con el sistema central y depósitos.</p>
+                            <h4 class="text-lg font-bold text-white mb-1">Facturación y cobros</h4>
+                            <p class="text-slate-400 text-sm font-light leading-relaxed">Registro de facturas, cobros y certificaciones en línea, enlazado con el sistema central y depósitos.</p>
                         </div>
                     </div>
 
@@ -149,58 +167,47 @@
 
     <div class="flex-grow"></div>
 
-    <footer class="bg-[#f8f9fa] border-t border-slate-200 pt-16 pb-12"> <div class="container mx-auto px-4 max-w-7xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                 
                 <div>
-                    <div class="mb-6">
-                        <a href="#" class="inline-block">
-                            <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
-                        </a>
-                        <p class="text-slate-600 text-sm font-medium mt-3 hidden md:block">Soluciones perfectas para su negocio</p>
+                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
+                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
                     </div>
-                    <ul class="space-y-3 text-slate-700 font-light text-sm">
-                        <li>
-                            <i class="far fa-envelope text-brandGreen w-5"></i>
-                            <span class="ml-2">soporte1@indissa.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt text-brandGreen w-5"></i>
-                            <span class="ml-2 font-semibold text-slate-900">PBX: (+502) 2508-3316</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt text-brandGreen w-5"></i>
-                            <span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span>
-                        </li>
+                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
                     </ul>
                 </div>
 
-                <div class="md:text-right lg:text-left"> <h4 class="text-lg font-bold text-slate-900 mb-6">Información</h4>
-                    <ul class="space-y-3 text-slate-700 font-light text-sm">
-                        <li><a href="#" class="hover:text-brandGreen transition">Nosotros</a></li>
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
                         <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
                     </ul>
                 </div>
 
-                </div>
+            </div>
 
-            <div class="border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-center text-sm text-slate-600">
-                <p class="mb-4 md:mb-0">© 2023 Indissa. All rights reserved.</p>
-                <div class="flex space-x-6">
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
                     <a href="#" class="hover:text-brandGreen transition flex items-center">
-                        <i class="fab fa-facebook mr-2 text-xl"></i>
-                        <span>Facebook</span>
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
                     </a>
                     <a href="#" class="hover:text-brandGreen transition flex items-center">
-                        <i class="fab fa-instagram mr-2 text-xl"></i>
-                        <span>Instagram</span>
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="fixed bottom-6 right-6 bg-slate-400 hover:bg-slate-500 text-white p-3 rounded shadow-lg transition-colors z-50">
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
         <i class="fas fa-chevron-up"></i>
     </a>
 
