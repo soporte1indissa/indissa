@@ -30,7 +30,15 @@
         }
         /* Efecto de resplandor verde sutil */
         .glow {
-            box-shadow: 0 0 40px -15px #78c846;
+            box-shadow: 0 0 50px -10px rgba(120, 200, 70, 0.25);
+        }
+        /* Cursor parpadeante para el efecto de máquina de escribir */
+        .cursor-blink {
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -76,17 +84,20 @@
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
             
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center space-x-2 bg-brandGreen/10 border border-brandGreen/30 rounded-full px-4 py-1.5 mb-6 shadow-[0_0_15px_rgba(120,200,70,0.1)]">
-                    <span class="w-2 h-2 rounded-full bg-brandGreen animate-pulse"></span>
-                    <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Partner EDX Solutions para certificación de documentos</span>
-                </div>
+            <div class="bg-gradient-to-br from-cardBg via-slate-900 to-darkBg border border-slate-800 rounded-3xl p-8 md:p-16 text-center mb-20 glow relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-48 h-48 bg-brandGreen/10 rounded-full filter blur-3xl"></div>
                 
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
-                    Una Versión de Software para Empresas con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Visiones Sin Límites</span>
+                <span class="text-brandGreen font-mono text-xs md:text-sm tracking-widest uppercase block mb-3">
+                    // Sistema de Gestión Corporativa
+                </span>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 min-h-[70px] md:min-h-[120px] flex items-center justify-center flex-wrap">
+                    <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400"></span>
+                    <span class="cursor-blink text-brandGreen font-light ml-1">|</span>
                 </h1>
-                <p class="text-lg text-slate-400 font-light max-w-3xl mx-auto">
-                    GearOnline es un software avanzado para la administración de empresas que controla y automatiza de manera integrada los siguientes módulos core:
+                
+                <p class="text-base md:text-lg text-slate-400 font-light max-w-3xl mx-auto border-t border-white/5 pt-6">
+                    GearOnline es un software desarrollado para la administración integral de empresas que controla, audita y optimiza de manera centralizada los siguientes módulos operativos:
                 </p>
             </div>
 
@@ -136,7 +147,7 @@
                         </div>
                         <ul class="space-y-2 text-sm text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Entradas, salidas y traslados</li>
-                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materials de muchos a uno</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materiales de muchos a uno</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materiales de uno a muchos</li>
                         </ul>
                     </div>
@@ -187,7 +198,7 @@
                             <h3 class="text-lg font-bold text-white">Contabilidad</h3>
                         </div>
                         <p class="text-sm text-slate-400 font-light leading-relaxed">
-                            Registro de partidas de diario y generación de estados financieros completos.
+                            Registro de partidas de diario y generación de estados financieros exactos.
                         </p>
                     </div>
 
@@ -277,7 +288,7 @@
                             <h3 class="text-lg font-bold text-white">CRM Personalizado</h3>
                         </div>
                         <p class="text-sm text-slate-400 font-light leading-relaxed">
-                            Diseñado a la medida para cada empresa y cada necesidad. Podemos estructurar cualquier flujo de trabajo CRM según las métricas particulares del cliente.
+                            Diseñado a la medida para cada empresa y cada necesidad. Podemos estructurar cualquier flujo de trabajo CRM según las métricas del cliente.
                         </p>
                     </div>
 
@@ -287,7 +298,7 @@
                             <h3 class="text-lg font-bold text-white">Sistema de Punto de Venta</h3>
                         </div>
                         <p class="text-sm text-slate-400 font-light leading-relaxed">
-                            Registro y manejo de transacciones en punto de venta con productos mediante códigos de barra, integrado de forma nativa con el sistema de contabilidad central.
+                            Registro y manejo de transacciones con productos mediante códigos de barra, integrado de forma nativa con el sistema de contabilidad central.
                         </p>
                     </div>
 
@@ -313,44 +324,4 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                 
                 <div>
-                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
-                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
-                    </div>
-                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
-                    <ul class="space-y-3 text-sm font-light">
-                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
-                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
-                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
-                    </ul>
-                </div>
-
-                <div class="md:text-right">
-                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
-                    <ul class="space-y-3 text-sm font-light">
-                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
-                        <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-                <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm">
-                    <a href="#" class="hover:text-brandGreen transition flex items-center">
-                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
-                    </a>
-                    <a href="#" class="hover:text-brandGreen transition flex items-center">
-                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-</body>
-</html>
+                    <div class="mb-6 bg-white p-1.5 rounded-
