@@ -324,4 +324,91 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                 
                 <div>
-                    <div class="mb-6 bg-white p-1.5 rounded-
+                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
+                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
+                    </ul>
+                </div>
+
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
+                        <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
+                    </a>
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        const words = [
+            "Partner EDX Solutions para certificación de documentos",
+            "Actualizaciones relevantes del sistema",
+            "Una Versión sin Límites"
+        ];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById("typewriter");
+
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                // Borrando texto
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Escribiendo texto
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // Velocidades de animación
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                // Pausa cuando termina de escribir la palabra entera
+                typeSpeed = 2500; 
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                // Pasa a la siguiente palabra
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Iniciar la animación al cargar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(type, 500);
+        });
+    </script>
+
+</body>
+</html>
