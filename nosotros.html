@@ -12,33 +12,33 @@
                 extend: {
                     colors: {
                         brandGreen: '#78c846',
-                        darkBg: '#0b1121', /* Fondo súper oscuro tecnológico */
-                        cardBg: '#111827', /* Color de tarjetas */
+                        darkBg: '#0b1121', /* Fondo premium oscuro */
+                        cardBg: '#111827', /* Color de las tarjetas */
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Patrón de cuadrícula de fondo sutil para dar toque tech */
+        /* Patrón de cuadrícula de fondo sutil */
         .tech-grid {
             background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
                               linear-gradient(to bottom, #1f2937 1px, transparent 1px);
             background-size: 40px 40px;
-            mask-image: radial-gradient(circle at center, black, transparent 80%);
-            -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
         }
-        /* Resplandor verde */
+        /* Efecto de resplandor verde sutil */
         .glow {
-            box-shadow: 0 0 40px -10px #78c846;
+            box-shadow: 0 0 40px -15px #78c846;
         }
     </style>
 </head>
 <body class="font-sans text-slate-300 antialiased bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white">
 
-    <nav class="bg-darkBg/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+    <nav class="bg-darkBg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
-            <div class="flex items-center bg-white p-1 rounded">
+            <div class="flex items-center bg-white p-1.5 rounded-lg shadow-sm">
                 <a href="index.html" class="inline-block">
                     <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
                 </a>
@@ -56,54 +56,134 @@
 
     <main class="relative flex-grow py-20 overflow-hidden">
         
-        <div class="absolute inset-0 tech-grid opacity-20 pointer-events-none"></div>
+        <div class="absolute inset-0 tech-grid opacity-25 pointer-events-none"></div>
 
-        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
             
-            <div class="text-center mb-20">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6">
-                    El Motor Detrás de tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-300">Software</span>
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
+                    Sobre <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Nosotros</span>
                 </h1>
-                <p class="text-xl text-slate-400 font-light max-w-2xl mx-auto">
-                    No solo escribimos código. Construimos el futuro operativo de tu empresa.
-                </p>
+                <div class="w-16 h-1 bg-brandGreen mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                
-                <div class="group relative bg-cardBg rounded-3xl p-10 border border-slate-800 hover:border-brandGreen/50 transition-all duration-500 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-brandGreen rounded-full mix-blend-multiply filter blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 rounded-xl bg-brandGreen/10 flex items-center justify-center mb-8 border border-brandGreen/20">
-                            <i class="fas fa-users text-2xl text-brandGreen"></i>
-                        </div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Nuestra Misión</h2>
-                        <p class="text-slate-400 leading-relaxed text-lg font-light">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-cardBg rounded-3xl p-8 md:p-10 border border-slate-800/80 hover:border-brandGreen/40 transition duration-300 flex items-start">
+                    <div class="w-12 h-12 rounded-xl bg-brandGreen/10 flex items-center justify-center mr-5 border border-brandGreen/20 flex-shrink-0">
+                        <i class="fas fa-users text-xl text-brandGreen"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Misión</h2>
+                        <p class="text-slate-400 leading-relaxed font-light">
                             Brindar el mejor servicio al cliente pre y postventa en todos los productos y servicios que ofrecemos contando con el mejor personal el cual se involucra día con día para proporcionar siempre servicio de alta calidad.
                         </p>
                     </div>
                 </div>
 
-                <div class="group relative bg-cardBg rounded-3xl p-10 border border-slate-800 hover:border-brandGreen/50 transition-all duration-500 overflow-hidden">
-                    <div class="absolute top-0 left-0 w-64 h-64 bg-brandGreen rounded-full mix-blend-multiply filter blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 -translate-y-1/2 -translate-x-1/2"></div>
-                    <div class="relative z-10">
-                        <div class="w-14 h-14 rounded-xl bg-brandGreen/10 flex items-center justify-center mb-8 border border-brandGreen/20">
-                            <i class="fas fa-building text-2xl text-brandGreen"></i>
-                        </div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Nuestra Visión</h2>
-                        <p class="text-slate-400 leading-relaxed text-lg font-light">
+                <div class="bg-cardBg rounded-3xl p-8 md:p-10 border border-slate-800/80 hover:border-brandGreen/40 transition duration-300 flex items-start">
+                    <div class="w-12 h-12 rounded-xl bg-brandGreen/10 flex items-center justify-center mr-5 border border-brandGreen/20 flex-shrink-0">
+                        <i class="fas fa-building text-xl text-brandGreen"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Visión</h2>
+                        <p class="text-slate-400 leading-relaxed font-light">
                             Emprender nuevas tecnologías todos los días para que nuestros clientes cuenten con nuevos servicios que sean de apoyo en sus operaciones a futuro.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                 
-                <div class="bg-cardBg rounded-3xl p-8 border border-slate-800 hover:bg-slate-800/50 transition duration-300">
-                    <i class="fas fa-handshake text-brandGreen mb-4 text-xl"></i>
-                    <h3 class="text-xl font-bold text-white mb-3">Compromiso Total</h3>
-                    <p class="text-slate-400 font-light text-sm leading-relaxed">
-                        Indissa es una empresa de desarrollo de software comprometida en brindar el mejor servicio. Nuestro enfoque está en la satisfacción del cliente y en la mejora continua, garantizando calidad en cada entrega.
-                    </p>
+                <div class="bg-cardBg rounded-3xl p-8 border border-slate-800/80 hover:bg-slate-900/40 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-brandGreen mb-6"><i class="fas fa-handshake-angle text-2xl"></i></div>
+                        <p class="text-slate-300 font-light text-base leading-relaxed text-justify">
+                            Indissa es una empresa de desarrollo de software comprometida en brindar el mejor servicio al cliente pre y postventa en todos los productos y servicios que ofrece. Su misión se enfoca en contar con el mejor personal que se involucra día con día para proporcionar siempre servicio de alta calidad, lo que implica un enfoque en la satisfacción del cliente y en la mejora continua.
+                        </p>
+                    </div>
                 </div>
+
+                <div class="bg-cardBg rounded-3xl p-8 border border-slate-800/80 hover:bg-slate-900/40 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-brandGreen mb-6"><i class="fas fa-chart-line text-2xl"></i></div>
+                        <p class="text-slate-300 font-light text-base leading-relaxed text-justify">
+                            Para cumplir con su misión, Indissa se enfoca en emprender nuevas tecnologías todos los días, lo que se alinea con su visión de proporcionar a sus clientes nuevos servicios que sean de apoyo en sus operaciones a futuro. Esto implica una dedicación constante a la investigación y desarrollo de nuevas tecnologías y soluciones innovadoras que ayuden a sus clientes a mejorar su eficiencia y productividad.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg rounded-3xl p-8 border border-slate-800/80 hover:bg-slate-900/40 transition flex flex-col justify-between">
+                    <div>
+                        <div class="text-brandGreen mb-6"><i class="fas fa-laptop-code text-2xl"></i></div>
+                        <p class="text-slate-300 font-light text-base leading-relaxed text-justify">
+                            El equipo de Indissa está compuesto por un equipo de trabajo capacitado y experimentados para colaborar con los clientes para entender sus necesidades y poder brindar el mejor soporte y desarrollo de las aplicaciones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 bg-gradient-to-br from-cardBg to-slate-900 rounded-3xl p-8 md:p-10 border border-slate-800 glow relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+                    <div class="relative z-10 md:w-3/4 text-center md:text-left mb-6 md:mb-0">
+                        <span class="text-brandGreen font-bold tracking-widest uppercase text-xs block mb-2">En Conclusión</span>
+                        <p class="text-white font-medium text-lg leading-relaxed">
+                            En resumen, Indissa es una empresa de desarrollo de software comprometida con la excelencia en el servicio al cliente y la innovación tecnológica constante para proporcionar soluciones personalizadas y de alta calidad que mejoren la eficiencia y productividad de sus clientes.
+                        </p>
+                    </div>
+                    <div class="relative z-10 flex-shrink-0">
+                        <a href="#" class="bg-brandGreen text-white px-8 py-3.5 rounded-xl font-bold hover:bg-green-500 transition-all inline-block shadow-[0_0_30px_rgba(120,200,70,0.3)]">
+                            Contáctanos
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                
+                <div>
+                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
+                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
+                    </ul>
+                </div>
+
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
+                        <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
+                    </a>
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+</body>
+</html>
