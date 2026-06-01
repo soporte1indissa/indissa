@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - INDISSA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#78c846',
+                        darkBg: '#0b1121', /* Fondo premium oscuro unificado */
+                        cardBg: '#111827', /* Color de las tarjetas */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Patrón de cuadrícula de fondo sutil */
+        .tech-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+        }
+        /* Efecto de resplandor verde sutil */
+        .glow {
+            box-shadow: 0 0 40px -15px #78c846;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 antialiased bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white">
+
+    <div class="bg-slate-950/60 border-b border-white/5 text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <div class="flex space-x-6 text-slate-400 font-medium">
+                <span class="flex items-center"><i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes</span>
+                <span class="flex items-center"><i class="far fa-comment-dots text-brandGreen mr-2"></i> En Línea 24/7 Servicio al cliente</span>
+            </div>
+            <div class="flex space-x-6 items-center text-slate-400 font-medium">
+                <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
+                <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
+                <a href="#" class="bg-brandGreen text-white px-4 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
+                    <i class="fab fa-whatsapp text-sm mr-2"></i> Whatsapp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-darkBg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
+            <div class="flex items-center bg-white p-1.5 rounded-lg shadow-sm">
+                <a href="index.html" class="inline-block">
+                    <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
+                <a href="index.html" class="text-slate-400 hover:text-brandGreen transition pb-1">INICIO</a>
+                <a href="nosotros.html" class="text-slate-400 hover:text-brandGreen transition pb-1">NOSOTROS</a>
+                <a href="productos.html" class="text-brandGreen border-b-2 border-brandGreen pb-1">PRODUCTOS</a>
+                <a href="#" class="text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
+                <a href="#" class="text-slate-400 hover:text-brandGreen transition pb-1">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative flex-grow py-16 overflow-hidden">
+        
+        <div class="absolute inset-0 tech-grid opacity-25 pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center space-x-2 bg-brandGreen/10 border border-brandGreen/30 rounded-full px-4 py-1.5 mb-6 shadow-[0_0_15px_rgba(120,200,70,0.1)]">
+                    <span class="w-2 h-2 rounded-full bg-brandGreen animate-pulse"></span>
+                    <span class="text-xs font-bold text-brandGreen uppercase tracking-widest">Partner EDX Solutions para certificación de documentos</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
+                    Una Versión de Software para Empresas con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Visiones Sin Límites</span>
+                </h1>
+                <p class="text-lg text-slate-400 font-light max-w-3xl mx-auto">
+                    GearOnline es un software avanzado para la administración de empresas que controla y automatiza de manera integrada los siguientes módulos core:
+                </p>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center space-x-4 mb-8">
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                        <i class="fas fa-cubes text-brandGreen mr-3"></i>Área Comercial
+                    </h2>
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-shopping-basket text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Compras</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Requisiciones</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Autorización de Requisiciones</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Órdenes de Compra</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Autorización de Órdenes de Compra</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de Despacho de proveedores locales y del exterior</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de Facturas de Proveedor locales y del exterior, así como el manejo de prorrateo de importaciones</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Devoluciones de proveedores</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-file-invoice-dollar text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Cuentas por Cobrar</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cargos de cuentas por cobrar</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cheques rechazados</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Abonos de cuentas por cobrar</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de depósitos para registrar los cortes de caja</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-boxes-stacked text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Inventarios</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Entradas, salidas y traslados</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materials de muchos a uno</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materiales de uno a muchos</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-receipt text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Facturación</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cotizaciones</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Pedidos</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Envíos</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Facturas</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Notas de Crédito</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Notas de Abono</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Notas de Débito</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-1">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-industry text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Producción</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Permite la creación de recetas para poder realizar una explosión de materiales y generar producto terminado.</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Permite la explosión de materiales inversa que de un producto se parta en diferentes ingredientes ó partes.</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Planificación de producción de acuerdo a pedidos para poder generar una orden de compra globalizada.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center space-x-4 mb-8">
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                        <i class="fas fa-coins text-brandGreen mr-3"></i>Área Financiera
+                    </h2>
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-book text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Contabilidad</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                            Registro de partidas de diario y generación de estados financieros completos.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-building-columns text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Bancos</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Movimiento Bancario</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Entrega de documentos</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-calculator text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Presupuesto</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de presupuesto Anual</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-money-bill-wave text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Cuentas por pagar</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Provisión de Proveedores</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Pago de Proveedores</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-2">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-percent text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">IVA</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Recibe todas las operaciones realizadas de compras, ventas e importaciones</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Separa desde el área financiera los impuestos de combustible, pequeños contribuyentes y compras y ventas exentas.</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Genera los libros de compras y ventas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <div class="flex items-center space-x-4 mb-8">
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                        <i class="fas fa-folder-plus text-brandGreen mr-3"></i>Otros Módulos
+                    </h2>
+                    <div class="h-px bg-slate-800 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-users-gear text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Área de Nómina</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Mensual</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Semanal</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Quincenal</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina de Aguinaldo</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina de Bono 14</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fab fa-android text-xl text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Pedidos y Cobros Android</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                            Registro de pedidos y cobros en línea o fuera de línea para luego enlazarlos de forma automatizada al sistema central.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-user-gear text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">CRM Personalizado</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                            Diseñado a la medida para cada empresa y cada necesidad. Podemos estructurar cualquier flujo de trabajo CRM según las métricas particulares del cliente.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-cash-register text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Sistema de Punto de Venta</h3>
+                        </div>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                            Registro y manejo de transacciones en punto de venta con productos mediante códigos de barra, integrado de forma nativa con el sistema de contabilidad central.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-2">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-mobile-screen-button text-brandGreen"></i></div>
+                            <h3 class="text-lg font-bold text-white">Facturación y Cobros Android</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de facturas y certificación en línea con entrega inmediata del documento en el sitio donde se encuentre el vendedor, enlazado directamente a impresoras portátiles BIXOLON SPP 200.</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de cobros sincronizado en tiempo real con la base de datos central.</li>
+                            <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Módulo integrado para registro de depósitos bancarios de caja.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                
+                <div>
+                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
+                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
+                    </ul>
+                </div>
+
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
+                        <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
+                    </a>
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+</body>
+</html>
