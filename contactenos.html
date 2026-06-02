@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - INDISSA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#78c846',
+                        darkBg: '#0b1121', /* Fondo premium oscuro unificado */
+                        cardBg: '#111827', /* Color de las tarjetas e inputs */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Patrón de cuadrícula de fondo sutil */
+        .tech-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+        }
+        /* Filtro tecnológico oscuro para el mapa */
+        .dark-map {
+            filter: grayscale(1) invert(0.92) contrast(1.1) brightness(0.9);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-300 antialiased bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white">
+
+    <div class="bg-slate-950/60 border-b border-white/5 text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <div class="flex space-x-6 text-slate-400 font-medium">
+                <span class="flex items-center"><i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes</span>
+                <span class="flex items-center"><i class="far fa-comment-dots text-brandGreen mr-2"></i> En Línea 24/7 Servicio al cliente</span>
+            </div>
+            <div class="flex space-x-6 items-center text-slate-400 font-medium">
+                <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
+                <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
+                <a href="#" class="bg-brandGreen text-white px-4 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
+                    <i class="fab fa-whatsapp text-sm mr-2"></i> Whatsapp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-darkBg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
+            <div class="flex items-center bg-white p-1.5 rounded-lg shadow-sm">
+                <a href="index.html" class="inline-block">
+                    <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
+                <a href="index.html" class="text-slate-400 hover:text-brandGreen transition pb-1">INICIO</a>
+                <a href="nosotros.html" class="text-slate-400 hover:text-brandGreen transition pb-1">NOSOTROS</a>
+                <a href="productos.html" class="text-slate-400 hover:text-brandGreen transition pb-1">PRODUCTOS</a>
+                <a href="https://app2.indissa.com/SISGEARMENUPRINCIPALHTTPS/empresa2.aspx" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
+                <a href="contactenos.html" class="text-brandGreen border-b-2 border-brandGreen pb-1">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative flex-grow py-16 overflow-hidden">
+        
+        <div class="absolute inset-0 tech-grid opacity-25 pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                    Ponte en <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Contacto</span>
+                </h1>
+                <div class="w-16 h-1 bg-brandGreen mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+                
+                <div class="lg:col-span-7 bg-cardBg rounded-3xl p-8 border border-slate-800/80 shadow-xl">
+                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
+                        <i class="far fa-user-circle text-brandGreen mr-3 text-xl"></i>Información Personal
+                    </h2>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+                        
+                        <input type="hidden" name="access_key" value="8f0251a7-4272-4aab-a3c5-228e0e8ec722">
+                        
+                        <input type="hidden" name="from_name" value="Sitio Web INDISSA">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Nombre</label>
+                                <input type="text" name="Nombre" required placeholder="Tu nombre" 
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brandGreen transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Apellidos</label>
+                                <input type="text" name="Apellidos" required placeholder="Tus apellidos" 
+                                    class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brandGreen transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Correo Electrónico</label>
+                            <input type="email" name="Email" required placeholder="ejemplo@correo.com" 
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brandGreen transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Asunto</label>
+                            <input type="text" name="Asunto" required placeholder="Motivo del mensaje" 
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brandGreen transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Mensaje</label>
+                            <textarea name="Mensaje" rows="5" required placeholder="Escribe detalladamente tu solicitud o consulta aquí..." 
+                                class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brandGreen transition resize-none"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" 
+                                class="w-full sm:w-auto bg-brandGreen text-white px-8 py-3.5 rounded-xl font-bold hover:bg-green-500 transition shadow-[0_0_20px_rgba(120,200,70,0.2)]">
+                                <i class="far fa-paper-plane mr-2"></i> Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-gradient-to-br from-cardBg to-slate-900 rounded-3xl p-8 border border-slate-800/80">
+                        <h3 class="text-2xl font-bold text-white mb-4">Mantente en contacto con nosotros</h3>
+                        <p class="text-slate-400 font-light leading-relaxed text-justify">
+                            ¿Buscas soluciones personalizadas para tu negocio? ¡Nosotros podemos ayudarte! Llena nuestro formulario de contacto y uno de nuestros expertos en desarrollo de software se pondrá en contacto contigo en breve. ¡No pierdas la oportunidad de llevar tu negocio al siguiente nivel!
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-cardBg p-6 rounded-2xl border border-slate-800/80">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-location-dot text-brandGreen"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-2">Dirección</h4>
+                            <p class="text-sm text-slate-400 font-light leading-relaxed">
+                                8a. Av 8-35 Zona 8 de Mixco<br>Guatemala, Guatemala
+                            </p>
+                        </div>
+
+                        <div class="bg-cardBg p-6 rounded-2xl border border-slate-800/80">
+                            <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center mb-4">
+                                <i class="fas fa-phone-alt text-brandGreen"></i>
+                            </div>
+                            <h4 class="text-base font-bold text-white mb-2">Contacto</h4>
+                            <p class="text-sm text-slate-400 font-light leading-relaxed">
+                                <span class="font-semibold text-white">PBX:</span> +502 2508-3316<br>
+                                <span class="text-xs font-mono text-slate-500">soporte1@indissa.com</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl relative bg-slate-950">
+                <div class="p-4 bg-cardBg border-b border-slate-800 flex items-center">
+                    <span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500 mr-4"></span>
+                    <span class="text-xs font-mono text-slate-500">// Ubicación Satelital Central — Mixco, Guatemala</span>
+                </div>
+                <iframe 
+                    class="w-full h-[400px] dark-map" 
+                    src="https://maps.google.com/maps?q=8a.%20Av%208-35%20Zona%208%20de%20Mixco,%20Guatemala&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
+                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
+                    </ul>
+                </div>
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
+                        <li><a href="contactenos.html" class="hover:text-brandGreen transition">Contactenos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">© 2023 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
+                    </a>
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+</body>
+</html>
