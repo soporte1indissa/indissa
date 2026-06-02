@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -19,17 +20,33 @@
             }
         }
     </script>
+    
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
     <style>
-        /* Patrón de cuadrícula de fondo sutil */
+        /* Patrón de cuadrícula de fondo sutil adaptativo */
         .tech-grid {
-            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
-                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(31, 41, 55, 0.2) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(31, 41, 55, 0.2) 1px, transparent 1px);
             background-size: 40px 40px;
             mask-image: radial-gradient(circle at center, black, transparent 85%);
             -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
         }
-        /* Efecto de resplandor verde sutil */
+        .dark .tech-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+        }
+        /* Efecto de resplandor verde sutil adaptativo */
         .glow {
+            box-shadow: 0 4px 20px -5px rgba(120, 200, 70, 0.1);
+        }
+        .dark .glow {
             box-shadow: 0 0 50px -10px rgba(120, 200, 70, 0.25);
         }
         /* Cursor parpadeante para el efecto de máquina de escribir */
@@ -42,15 +59,15 @@
         }
     </style>
 </head>
-<body class="font-sans text-slate-300 antialiased bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white">
+<body class="font-sans text-slate-700 dark:text-slate-300 antialiased bg-slate-50 dark:bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white transition-colors duration-300">
 
-    <div class="bg-slate-950/60 border-b border-white/5 text-xs py-2 hidden md:block">
+    <div class="bg-white dark:bg-slate-950/60 border-b border-slate-200 dark:border-white/5 text-xs py-2 hidden md:block transition-colors">
         <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
-            <div class="flex space-x-6 text-slate-400 font-medium">
+            <div class="flex space-x-6 text-slate-500 dark:text-slate-400 font-medium">
                 <span class="flex items-center"><i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes</span>
                 <span class="flex items-center"><i class="far fa-comment-dots text-brandGreen mr-2"></i> En Línea 24/7 Servicio al cliente</span>
             </div>
-            <div class="flex space-x-6 items-center text-slate-400 font-medium">
+            <div class="flex space-x-6 items-center text-slate-600 dark:text-slate-400 font-medium">
                 <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
                 <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
                 <a href="#" class="bg-brandGreen text-white px-4 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
@@ -60,63 +77,70 @@
         </div>
     </div>
 
-    <nav class="bg-darkBg/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+    <nav class="bg-white/90 dark:bg-darkBg/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 sticky top-0 z-50 transition-colors">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center max-w-7xl">
-            <div class="flex items-center bg-white p-1.5 rounded-lg shadow-sm">
+            <div class="flex items-center">
                 <a href="index.html" class="inline-block">
-                    <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-10 w-auto">
+                    <img src="images/fondoB.png" alt="Logo de INDISSA" class="h-11 w-auto dark:hidden">
+                    <img src="images/fondoD.png" alt="Logo de INDISSA Dark" class="h-12 w-auto hidden dark:block">
                 </a>
             </div>
             
-            <div class="hidden md:flex space-x-8 font-semibold text-sm tracking-wide">
-                <a href="index.html" class="text-slate-400 hover:text-brandGreen transition pb-1">INICIO</a>
-                <a href="nosotros.html" class="text-slate-400 hover:text-brandGreen transition pb-1">NOSOTROS</a>
-                <a href="productos.html" class="text-brandGreen border-b-2 border-brandGreen pb-1">PRODUCTOS</a>
-                <a href="https://app2.indissa.com/SISGEARMENUPRINCIPALHTTPS/empresa2.aspx" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
-                <a href="contactenos.html" class="text-slate-400 hover:text-brandGreen transition pb-1">CONTACTO</a>
+            <div class="flex items-center space-x-8 font-semibold text-sm tracking-wide">
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">INICIO</a>
+                    <a href="nosotros.html" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">NOSOTROS</a>
+                    <a href="productos.html" class="text-brandGreen border-b-2 border-brandGreen pb-1">PRODUCTOS</a>
+                    <a href="https://app2.indissa.com/SISGEARMENUPRINCIPALHTTPS/empresa2.aspx" target="_blank" rel="noopener noreferrer" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
+                    <a href="contactenos.html" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">CONTACTO</a>
+                </div>
+
+                <button id="theme-toggle" type="button" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none rounded-xl text-sm p-2.5 border border-slate-200 dark:border-slate-800 transition">
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.464a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm2.121-10.607a1 1 0 011.414 0l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 010 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
             </div>
         </div>
     </nav>
 
     <main class="relative flex-grow py-16 overflow-hidden">
-        
-        <div class="absolute inset-0 tech-grid opacity-25 pointer-events-none"></div>
+        <div class="absolute inset-0 tech-grid opacity-10 dark:opacity-25 pointer-events-none"></div>
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
             
-            <div class="bg-gradient-to-br from-cardBg via-slate-900 to-darkBg border border-slate-800 rounded-3xl p-8 md:p-16 text-center mb-20 glow relative overflow-hidden">
+            <div class="bg-white dark:bg-gradient-to-br dark:from-cardBg dark:via-slate-900 dark:to-darkBg border border-slate-200 dark:border-slate-800 rounded-3xl p-8 md:p-16 text-center mb-20 glow relative overflow-hidden shadow-sm dark:shadow-none">
                 <div class="absolute -top-24 -left-24 w-48 h-48 bg-brandGreen/10 rounded-full filter blur-3xl"></div>
                 
                 <span class="text-brandGreen font-mono text-xs md:text-sm tracking-widest uppercase block mb-3">
                     // Sistema de Gestión Corporativa
                 </span>
                 
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 min-h-[70px] md:min-h-[120px] flex items-center justify-center flex-wrap">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 min-h-[70px] md:min-h-[120px] flex items-center justify-center flex-wrap">
                     <span id="typewriter" class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400"></span>
                     <span class="cursor-blink text-brandGreen font-light ml-1">|</span>
                 </h1>
                 
-                <p class="text-base md:text-lg text-slate-400 font-light max-w-3xl mx-auto border-t border-white/5 pt-6">
+                <p class="text-base md:text-lg text-slate-600 dark:text-slate-400 font-light max-w-3xl mx-auto border-t border-slate-200 dark:border-white/5 pt-6">
                     GearOnline es un software desarrollado para la administración integral de empresas que controla, audita y optimiza de manera centralizada los siguientes módulos operativos:
                 </p>
             </div>
 
             <div class="mb-20">
                 <div class="flex items-center space-x-4 mb-8">
-                    <div class="h-px bg-slate-800 flex-grow"></div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
                         <i class="fas fa-cubes text-brandGreen mr-3"></i>Área Comercial
                     </h2>
-                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-shopping-basket text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Compras</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Compras</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Requisiciones</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Autorización de Requisiciones</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Órdenes de Compra</li>
@@ -127,12 +151,12 @@
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-file-invoice-dollar text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Cuentas por Cobrar</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Cuentas por Cobrar</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cargos de cuentas por cobrar</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cheques rechazados</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Abonos de cuentas por cobrar</li>
@@ -140,24 +164,24 @@
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-boxes-stacked text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Inventarios</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Inventarios</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Entradas, salidas y traslados</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materiales de muchos a uno</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Conversión de materiales de uno a muchos</li>
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-receipt text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Facturación</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Facturación</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Cotizaciones</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Pedidos</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Envíos</li>
@@ -168,12 +192,12 @@
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-1">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col md:col-span-2 lg:col-span-1">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-industry text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Producción</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Producción</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Permite la creación de recetas para poder realizar una explosión de materiales y generar producto terminado.</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Permite la explosión de materiales inversa que de un producto se parta en diferentes ingredientes ó partes.</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Planificación de producción de acuerdo a pedidos para poder generar una orden de compra globalizada.</li>
@@ -184,62 +208,62 @@
 
             <div class="mb-20">
                 <div class="flex items-center space-x-4 mb-8">
-                    <div class="h-px bg-slate-800 flex-grow"></div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
                         <i class="fas fa-coins text-brandGreen mr-3"></i>Área Financiera
                     </h2>
-                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-book text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Contabilidad</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Contabilidad</h3>
                         </div>
-                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                        <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             Registro de partidas de diario y generación de estados financieros exactos.
                         </p>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-building-columns text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Bancos</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Bancos</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Movimiento Bancario</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Entrega de documentos</li>
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-calculator text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Presupuesto</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Presupuesto</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de presupuesto Anual</li>
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-money-bill-wave text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Cuentas por pagar</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Cuentas por pagar</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Provisión de Proveedores</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Pago de Proveedores</li>
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-2">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col md:col-span-2 lg:col-span-2">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-percent text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">IVA</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">IVA</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Recibe todas las operaciones realizadas de compras, ventas e importaciones</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Separa desde el área financiera los impuestos de combustible, pequeños contribuyentes y compras y ventas exentas.</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Genera los libros de compras y ventas</li>
@@ -250,20 +274,20 @@
 
             <div class="mb-10">
                 <div class="flex items-center space-x-4 mb-8">
-                    <div class="h-px bg-slate-800 flex-grow"></div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white tracking-tight px-4 border border-brandGreen/20 bg-brandGreen/5 py-2 rounded-xl">
                         <i class="fas fa-folder-plus text-brandGreen mr-3"></i>Otros Módulos
                     </h2>
-                    <div class="h-px bg-slate-800 flex-grow"></div>
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-users-gear text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Área de Nómina</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Área de Nómina</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Mensual</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Semanal</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Nómina Quincenal</li>
@@ -272,42 +296,42 @@
                         </ul>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fab fa-android text-xl text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Pedidos y Cobros Android</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Pedidos y Cobros Android</h3>
                         </div>
-                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                        <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             Registro de pedidos y cobros en línea o fuera de línea para luego enlazarlos de forma automatizada al sistema central.
                         </p>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-user-gear text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">CRM Personalizado</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">CRM Personalizado</h3>
                         </div>
-                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                        <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             Diseñado a la medida para cada empresa y cada necesidad. Podemos estructurar cualquier flujo de trabajo CRM según las métricas del cliente.
                         </p>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-cash-register text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Sistema de Punto de Venta</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Sistema de Punto de Venta</h3>
                         </div>
-                        <p class="text-sm text-slate-400 font-light leading-relaxed">
+                        <p class="text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                             Registro y manejo de transacciones con productos mediante códigos de barra, integrado de forma nativa con el sistema de contabilidad central.
                         </p>
                     </div>
 
-                    <div class="bg-cardBg rounded-2xl p-6 border border-slate-800/80 hover:border-slate-700 transition flex flex-col md:col-span-2 lg:col-span-2">
+                    <div class="bg-white dark:bg-cardBg rounded-2xl p-6 border border-slate-200 dark:border-slate-800/80 hover:border-brandGreen/40 shadow-sm dark:shadow-none transition flex flex-col md:col-span-2 lg:col-span-2">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-10 h-10 rounded-lg bg-brandGreen/10 flex items-center justify-center"><i class="fas fa-mobile-screen-button text-brandGreen"></i></div>
-                            <h3 class="text-lg font-bold text-white">Facturación y Cobros Android</h3>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Facturación y Cobros Android</h3>
                         </div>
-                        <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400 font-light">
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de facturas y certificación en línea con entrega inmediata del documento en el sitio donde se encuentre el vendedor, enlazado directamente a impresoras portátiles BIXOLON SPP 200.</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Registro de cobros sincronizado en tiempo real con la base de datos central.</li>
                             <li class="flex items-start"><span class="text-brandGreen mr-2">•</span>Módulo integrado para registro de depósitos bancarios de caja.</li>
@@ -319,35 +343,34 @@
         </div>
     </main>
 
-    <footer class="bg-slate-950 border-t border-white/10 pt-16 pb-12 text-slate-400">
+    <footer class="bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-white/10 pt-16 pb-12 text-slate-600 dark:text-slate-400 transition-colors">
         <div class="container mx-auto px-4 max-w-7xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                
                 <div>
-                    <div class="mb-6 bg-white p-1.5 rounded-lg inline-block">
-                        <img src="https://indissa.com/wp-content/uploads/2022/04/logoindissa.jpg" alt="Logo de INDISSA" class="h-9 w-auto">
+                    <div class="mb-6 inline-block">
+                        <img src="images/fondoB.png" alt="Logo de INDISSA" class="h-9 w-auto dark:hidden">
+                        <img src="images/fondoD.png" alt="Logo de INDISSA Dark" class="h-9 w-auto hidden dark:block">
                     </div>
-                    <p class="text-xs text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
-                    <ul class="space-y-3 text-sm font-light">
+                    <p class="text-xs text-slate-400 dark:text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light text-slate-700 dark:text-slate-400">
                         <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
-                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-slate-900 dark:text-white">PBX: (+502) 2508-3316</span></li>
                         <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
                     </ul>
                 </div>
 
                 <div class="md:text-right">
-                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
-                    <ul class="space-y-3 text-sm font-light">
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light text-slate-700 dark:text-slate-400">
                         <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
-                        <li><a href="#" class="hover:text-brandGreen transition">Contactenos</a></li>
+                        <li><a href="contactenos.html" class="hover:text-brandGreen transition">Contactenos</a></li>
                     </ul>
                 </div>
-
             </div>
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
                 <p class="mb-4 md:mb-0">&copy; 2023 Indissa. All rights reserved.</p>
-                <div class="flex space-x-6 text-sm">
+                <div class="flex space-x-6 text-sm text-slate-600 dark:text-slate-400">
                     <a href="#" class="hover:text-brandGreen transition flex items-center">
                         <i class="fab fa-facebook mr-2 text-base"></i> Facebook
                     </a>
@@ -359,11 +382,47 @@
         </div>
     </footer>
 
-    <a href="#" class="fixed bottom-6 right-6 bg-slate-800 hover:bg-brandGreen text-white p-3 rounded-xl shadow-xl transition duration-300 z-50 border border-slate-700/50">
+    <a href="#" class="fixed bottom-6 right-6 bg-slate-200 dark:bg-slate-800 hover:bg-brandGreen text-slate-700 dark:text-white p-3 rounded-xl shadow-md dark:shadow-xl transition duration-300 z-50 border border-slate-300 dark:border-slate-700/50">
         <i class="fas fa-chevron-up"></i>
     </a>
 
     <script>
+        // Lógica del alternador de Temas
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (document.documentElement.classList.contains('dark')) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('theme')) {
+                if (localStorage.getItem('theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+        });
+
+        // Lógica de la animación de la Máquina de Escribir
         const words = [
             "Partner EDX Solutions para certificación de documentos",
             "Actualizaciones relevantes del sistema",
@@ -378,25 +437,20 @@
             const currentWord = words[wordIndex];
             
             if (isDeleting) {
-                // Borrando texto
                 typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                // Escribiendo texto
                 typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
                 charIndex++;
             }
 
-            // Velocidades de animación
             let typeSpeed = isDeleting ? 40 : 80;
 
             if (!isDeleting && charIndex === currentWord.length) {
-                // Pausa cuando termina de escribir la palabra entera
                 typeSpeed = 2500; 
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
-                // Pasa a la siguiente palabra
                 wordIndex = (wordIndex + 1) % words.length;
                 typeSpeed = 400;
             }
@@ -404,11 +458,9 @@
             setTimeout(type, typeSpeed);
         }
 
-        // Iniciar la animación al cargar la página
         document.addEventListener("DOMContentLoaded", () => {
             setTimeout(type, 500);
         });
     </script>
-
 </body>
 </html>
