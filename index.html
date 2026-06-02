@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" class="dark"> <head>
+<html lang="es" class="dark">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDISSA - Desarrollo de Software</title>
@@ -51,22 +52,20 @@
         }
         /* AJUSTE DEL OVERLAY DEL HERO PARA VISIBILIDAD DE LA IMAGEN EN MODO OSCURO */
         .hero-bg {
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.10),
-            rgba(255,255,255,0.20)
-        ),
-        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-}
+            background-image: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.25)),
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-.dark .hero-bg {
-    background-image:
-        linear-gradient(
-            rgba(11, 17, 33, 0.25),
-            rgba(11, 17, 33, 0.35)
-        ),
-        url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-}
+        .dark .hero-bg {
+            background-image: linear-gradient(rgba(11, 17, 33, 0.4), rgba(11, 17, 33, 0.5)),
+                url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 <body class="font-sans text-slate-700 dark:text-slate-300 antialiased bg-slate-50 dark:bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white transition-colors duration-300">
@@ -115,7 +114,7 @@
         </div>
     </nav>
 
-    <header class="hero-bg py-32 md:py-44 flex items-center text-center px-4 relative transition-colors">
+    <header class="hero-bg py-16 md:py-24 flex items-center text-center px-4 relative transition-colors">
         <div class="absolute inset-0 tech-grid opacity-5 pointer-events-none"></div>
         
         <div class="container mx-auto max-w-5xl relative z-10">
@@ -222,7 +221,7 @@
                 </div>
 
                 <div class="md:text-right">
-                    <h4 class="text-lg font-bold text-white mb-6">Información</h4>
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Información</h4>
                     <ul class="space-y-3 text-sm font-light text-slate-700 dark:text-slate-400">
                         <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
                         <li><a href="contactenos.html" class="hover:text-brandGreen transition">Contactenos</a></li>
