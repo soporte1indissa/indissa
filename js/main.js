@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Invocamos la barra de navegación de forma dinámica
     const headerElement = document.getElementById("global-header");
@@ -51,6 +50,7 @@ function inicializarLogicaNavegacion() {
     if (mobileMenuToggle && navMenuLinks) {
         mobileMenuToggle.addEventListener('click', () => {
             navMenuLinks.classList.toggle('hidden');
+            // Asegura un despliegue limpio en bloque vertical cuando esté en móvil
             navMenuLinks.classList.toggle('flex');
         });
     }
@@ -71,7 +71,7 @@ function inicializarLogicaNavegacion() {
 function marcarActivo(idElemento) {
     const link = document.getElementById(idElemento);
     if (link) {
-        // Le aplica el color verde característico de INDISSA
+        // Aplica el color verde característico e indicador de línea inferior de INDISSA
         link.className = "text-brandGreen border-b-2 border-brandGreen pb-1";
     }
 }
