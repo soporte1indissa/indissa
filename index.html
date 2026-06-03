@@ -49,9 +49,9 @@
         .dark .glow {
             box-shadow: 0 0 40px -15px #78c846;
         }
-        /* Ajuste adaptativo del fondo del Hero con la imagen de código clara */
+        /* CORREGIDO: Reducción de opacidad en modo claro para que la imagen no se opaque ni se lave */
         .hero-bg {
-            background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.95)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(248, 250, 252, 0.30), rgba(248, 250, 252, 0.40)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -72,7 +72,7 @@
                 Mejoramos la eficiencia y productividad de tu empresa
             </h2>
             <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight">
-                Desarrollo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-500">Software</span>
+                Desarrollo de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Software</span>
             </h1>
             <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 font-light">
                 Rapidez, Calidad y Servicio
