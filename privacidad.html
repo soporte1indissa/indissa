@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - INDISSA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para los íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#78c846',
+                        darkBg: '#0b1121',
+                        cardBg: '#111827',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Script crítico en el Head para evitar el parpadeo blanco -->
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <style>
+        .tech-grid {
+            background-image: linear-gradient(to right, rgba(31, 41, 55, 0.2) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(31, 41, 55, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+            -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+        }
+        .dark .tech-grid {
+            background-image: linear-gradient(to right, #1f2937 1px, transparent 1px),
+                              linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 dark:text-slate-300 antialiased bg-slate-50 dark:bg-darkBg flex flex-col min-h-screen selection:bg-brandGreen selection:text-white transition-colors duration-300">
+
+    <!-- CONTENEDOR MAESTRO DE NAVEGACIÓN DINÁMICA -->
+    <div id="global-header" class="sticky top-0 z-50"></div>
+
+    <!-- Contenido Principal -->
+    <main class="relative flex-grow py-16 overflow-hidden">
+        <div class="absolute inset-0 tech-grid opacity-10 dark:opacity-25 pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 max-w-4xl relative z-10">
+            
+            <div class="text-center mb-12">
+                <span class="text-brandGreen font-mono text-xs uppercase tracking-widest block mb-2">// Legal & Cumplimiento</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+                    Política de <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGreen to-green-400">Privacidad</span>
+                </h1>
+                <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Última actualización: 22/10/2026</p>
+                <div class="w-16 h-1 bg-brandGreen mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="bg-white dark:bg-cardBg rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800/80 shadow-sm dark:shadow-xl space-y-8 text-sm md:text-base leading-relaxed">
+                
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">1.</span> Quiénes somos
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        El responsable del tratamiento de tus datos es <strong class="font-semibold text-slate-900 dark:text-white">INDUSTRIA CREATIVA DE DESARROLLO INTERNACIONAL DE SOFTWARE (INDISSA)</strong>, con domicilio en 8 Av 8-35 Zona 8, Mixco, Guatemala.<br>
+                        Contacto de privacidad: <a href="mailto:administracion@indissa.com" class="text-brandGreen hover:underline font-mono">administracion@indissa.com</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">2.</span> A qué se aplica esta política
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        A nuestro sitio web y a los canales de atención que operamos por WhatsApp, Messenger e Instagram (en adelante, los «canales de mensajería»), que funcionan con las plataformas de Meta.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">3.</span> Qué datos recopilamos
+                    </h2>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400 font-light list-disc pl-5">
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Mensajes:</strong> el contenido de los mensajes que nos envías (texto, imágenes, audios, documentos y ubicación) y la fecha y hora de cada uno.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Identificadores:</strong> tu identificador de usuario en el canal (por ejemplo, el ID de Instagram o Messenger asignado a nuestra cuenta, o tu número de WhatsApp) y el nombre de perfil público que el canal comparte con nosotros.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Datos que nos das para gestionar tu solicitud:</strong> nombre, NIT, dirección de entrega, número de pedido o comprobante de pago, cuando haces un pedido, una cotización, un pago o una solicitud de soporte.</li>
+                    </ul>
+                    <p class="text-slate-600 dark:text-slate-400 font-light mt-3 bg-slate-100 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                        Solo accedemos a las conversaciones que inicias con nuestras cuentas de negocio. No te pedimos contraseñas y no accedemos a tus contactos, publicaciones ni a conversaciones con terceros.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">4.</span> Para qué usamos tus datos
+                    </h2>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400 font-light list-disc pl-5">
+                        <li>Responder tus consultas y atenderte por los canales de mensajería.</li>
+                        <li>Gestionar pedidos, cotizaciones, pagos y solicitudes de soporte.</li>
+                        <li>Mantener el historial de la conversación para dar continuidad a la atención.</li>
+                        <li>Mejorar la calidad del servicio y prevenir fraude o abuso.</li>
+                        <li>Cumplir obligaciones legales.</li>
+                    </ul>
+                    <p class="text-slate-900 dark:text-white font-medium mt-3">
+                        No vendemos tus datos y no usamos los datos que recibimos de Meta para publicidad.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">5.</span> Asistente automatizado
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Parte de nuestras respuestas las genera un asistente con inteligencia artificial. En cualquier momento puedes pedir que te atienda una persona, escribiéndolo en el chat o eligiendo la opción de asesor del menú.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">6.</span> Con quién compartimos datos
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light mb-3">
+                        Compartimos datos solo con proveedores que los procesan por nuestra cuenta, para prestar el servicio:
+                    </p>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400 font-light list-disc pl-5">
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Meta Platforms</strong> (WhatsApp, Messenger e Instagram), como proveedor de los canales.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Google</strong>, por el modelo de inteligencia artificial que genera respuestas y, cuando envías archivos para un caso de soporte, por el almacenamiento de esos archivos.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">OpenAI</strong>, para transcribir notas de voz y generar respuestas en audio, aplica para todos los canales.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">Twilio</strong>, como proveedor de WhatsApp mientras esté activo.</li>
+                        <li><strong class="font-medium text-slate-900 dark:text-white">LeaseWeb y Cloudflare</strong>, como proveedores de alojamiento y red de nuestros servidores.</li>
+                    </ul>
+                    <p class="text-slate-600 dark:text-slate-400 font-light mt-3">
+                        También podemos compartir datos si una autoridad competente lo exige conforme a la ley.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">7.</span> Transferencias internacionales
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Estos proveedores pueden procesar datos fuera de Guatemala, incluidos Estados Unidos y otros países.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">8.</span> Cuánto tiempo conservamos tus datos
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Conservamos tus datos por 24 meses máximo desde tu último contacto, o por el tiempo que exija la ley (por ejemplo, registros contables o fiscales). Después los eliminamos o anonimizamos.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">9.</span> Seguridad
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Aplicamos medidas técnicas y organizativas razonables para proteger tus datos, como control de acceso, conexiones cifradas y protección de credenciales.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">10.</span> Tus derechos
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Puedes pedirnos acceder a tus datos, corregirlos, eliminarlos u oponerte a su uso. Escríbenos a <a href="mailto:administracion@indissa.com" class="text-brandGreen hover:underline font-mono">administracion@indissa.com</a> y respondemos en un plazo máximo de 30 días. Para eliminar tus datos, sigue las instrucciones de <a href="eliminar-datos.html" class="text-brandGreen underline hover:text-green-500 font-medium">https://indissa.com/eliminar-datos</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">11.</span> Menores de edad
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Nuestros servicios no están dirigidos a menores de edad y no recopilamos datos de ellos de forma intencional.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">12.</span> Cambios en esta política
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        Podemos actualizar esta política. Publicaremos la versión vigente en esta página con su fecha de actualización.
+                    </p>
+                </section>
+
+                <section class="border-t border-slate-200 dark:border-slate-800 pt-6">
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center">
+                        <span class="text-brandGreen mr-2 font-mono">13.</span> Contacto
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 font-light">
+                        INDISSA · 8 Av 8-35 Zona 8, Mixco, Guatemala · <a href="mailto:administracion@indissa.com" class="text-brandGreen hover:underline font-mono">administracion@indissa.com</a> · PBX / Tel: (+502) 2311-7752 / 2508-3316.
+                    </p>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Pie de página (Footer) -->
+    <footer class="bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-white/10 pt-16 pb-12 text-slate-600 dark:text-slate-400 transition-colors">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div>
+                    <div class="mb-6 inline-block">
+                        <img src="images/fondoB.png" alt="Logo de INDISSA" class="h-9 w-auto dark:hidden">
+                        <img src="images/fondoD.png" alt="Logo de INDISSA Dark" class="h-9 w-auto hidden dark:block">
+                    </div>
+                    <p class="text-xs text-slate-400 dark:text-slate-500 mb-4 -mt-2">Soluciones perfectas para su negocio</p>
+                    <ul class="space-y-3 text-sm font-light text-slate-700 dark:text-slate-400">
+                        <li class="flex items-center"><i class="far fa-envelope text-brandGreen w-5 text-base"></i><span class="ml-2">soporte1@indissa.com</span></li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt text-brandGreen w-5 text-base"></i><span class="ml-2 font-semibold text-slate-900 dark:text-white">PBX: (+502) 2508-3316</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt text-brandGreen w-5 text-base"></i><span class="ml-2">8a. Av 8-35 Zona 8 de Mixco, Guatemala, Ciudad</span></li>
+                    </ul>
+                </div>
+                <div class="md:text-right">
+                    <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Información</h4>
+                    <ul class="space-y-3 text-sm font-light text-slate-700 dark:text-slate-400">
+                        <li><a href="nosotros.html" class="hover:text-brandGreen transition">Nosotros</a></li>
+                        <li><a href="contactenos.html" class="hover:text-brandGreen transition">Contactenos</a></li>
+                        <li><a href="privacidad.html" class="text-brandGreen font-medium transition">Política de Privacidad</a></li>
+                        <li><a href="eliminar-datos.html" class="hover:text-brandGreen transition">Eliminación de Datos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p class="mb-4 md:mb-0">© 2026 Indissa. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-slate-600 dark:text-slate-400">
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-facebook mr-2 text-base"></i> Facebook
+                    </a>
+                    <a href="#" class="hover:text-brandGreen transition flex items-center">
+                        <i class="fab fa-instagram mr-2 text-base"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INVOCACIÓN ÚNICA DEL SCRIPT MAESTRO -->
+    <script src="js/main.js"></script>
+</body>
+</html>
