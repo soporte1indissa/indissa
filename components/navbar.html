@@ -1,14 +1,39 @@
+<!-- components/navbar.html -->
+<!-- BARRA SUPERIOR (Horarios, Contacto y Redes con Chat Directo) -->
 <div class="bg-white dark:bg-slate-950/60 border-b border-slate-200 dark:border-white/5 text-xs py-2 hidden md:block transition-colors">
     <div class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+        <!-- Horario de atención -->
         <div class="flex space-x-6 text-slate-500 dark:text-slate-400 font-medium">
-            <span class="flex items-center"><i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes</span>
+            <span class="flex items-center">
+                <i class="far fa-clock text-brandGreen mr-2"></i> 08:00AM - 05:30PM Lunes a Viernes
+            </span>
         </div>
-        <div class="flex space-x-6 items-center text-slate-600 dark:text-slate-400 font-medium">
-            <span class="flex items-center"><i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2508-3316</span>
-            <span class="flex items-center"><i class="far fa-envelope text-brandGreen mr-2"></i> soporte1@indissa.com</span>
-            <!-- CORREGIDO: Ahora sí apunta al número celular correcto de WhatsApp -->
-            <a href="https://wa.me/50237180995" target="_blank" rel="noopener noreferrer" class="bg-brandGreen text-white px-4 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
-                <i class="fab fa-whatsapp text-sm mr-2"></i> Whatsapp
+
+        <!-- Canales de contacto directo -->
+        <div class="flex space-x-5 items-center text-slate-600 dark:text-slate-400 font-medium">
+            <!-- Teléfono PBX -->
+            <a href="tel:+50223117752" class="flex items-center hover:text-brandGreen transition">
+                <i class="fas fa-phone-alt text-brandGreen mr-2"></i> +502 2311-7752
+            </a>
+
+            <!-- Correo oficial -->
+            <a href="mailto:contacto@indissa.com" class="flex items-center hover:text-brandGreen transition">
+                <i class="far fa-envelope text-brandGreen mr-2"></i> contacto@indissa.com
+            </a>
+
+            <!-- Facebook Messenger (Chat directo) -->
+            <a href="https://m.me/indissaguatemala" target="_blank" rel="noopener noreferrer" title="Enviar mensaje en Messenger" class="text-slate-500 dark:text-slate-400 hover:text-brandGreen transition text-sm flex items-center">
+                <i class="fab fa-facebook-messenger"></i>
+            </a>
+
+            <!-- Instagram Direct (Mensaje directo) -->
+            <a href="https://ig.me/m/indissa_guatemala" target="_blank" rel="noopener noreferrer" title="Enviar mensaje directo en Instagram" class="text-slate-500 dark:text-slate-400 hover:text-brandGreen transition text-sm flex items-center">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- Botón WhatsApp oficial -->
+            <a href="https://wa.me/50258804453" target="_blank" rel="noopener noreferrer" class="bg-brandGreen text-white px-3.5 py-1 rounded-md font-semibold hover:bg-green-600 transition flex items-center shadow-sm">
+                <i class="fab fa-whatsapp text-sm mr-1.5"></i> Whatsapp
             </a>
         </div>
     </div>
@@ -36,6 +61,19 @@
                 <a href="productos.html" id="link-productos" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">PRODUCTOS</a>
                 <a href="https://app2.indissa.com/SISGEARMENUPRINCIPALHTTPS/empresa2.aspx" target="_blank" rel="noopener noreferrer" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">GEARONLINE2</a>
                 <a href="contactenos.html" id="link-contacto" class="text-slate-600 dark:text-slate-400 hover:text-brandGreen transition pb-1">CONTACTO</a>
+                
+                <!-- Accesos directos a chat en versión móvil dentro del menú desplegable -->
+                <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center space-x-4 md:hidden">
+                    <a href="https://wa.me/50258804453" target="_blank" rel="noopener noreferrer" class="text-brandGreen flex items-center font-semibold text-xs">
+                        <i class="fab fa-whatsapp text-base mr-1"></i> WhatsApp
+                    </a>
+                    <a href="https://m.me/indissaguatemala" target="_blank" rel="noopener noreferrer" class="text-slate-500 dark:text-slate-400 hover:text-brandGreen flex items-center font-semibold text-xs">
+                        <i class="fab fa-facebook-messenger text-base mr-1"></i> Messenger
+                    </a>
+                    <a href="https://ig.me/m/indissa_guatemala" target="_blank" rel="noopener noreferrer" class="text-slate-500 dark:text-slate-400 hover:text-brandGreen flex items-center font-semibold text-xs">
+                        <i class="fab fa-instagram text-base mr-1"></i> Instagram
+                    </a>
+                </div>
             </div>
 
             <!-- BOTÓN INTERACTIVO DE MODO (Sol / Luna) -->
