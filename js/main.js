@@ -1,45 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Cargar Navbar dinámica
+    // 1. Invocación dinámica de la barra de navegación
     const headerElement = document.getElementById("global-header");
     if (headerElement) {
         fetch("components/navbar.html")
             .then(response => {
-                if (!response.ok) throw new Error("Error cargando navbar");
+                if (!response.ok) throw new Error("No se pudo obtener components/navbar.html");
                 return response.text();
             })
             .then(html => {
                 headerElement.innerHTML = html;
                 inicializarLogicaNavegacion();
             })
-            .catch(error => console.error("Error al cargar la barra de navegación:", error));
+            .catch(error => console.error("Error cargando la navegación:", error));
     }
 
-    // 2. Cargar Footer dinámico 123
+    // 2. Invocación dinámica del Footer
     const footerElement = document.getElementById("global-footer");
     if (footerElement) {
         fetch("components/footer.html")
             .then(response => {
-                if (!response.ok) throw new Error("Error cargando footer");
+                if (!response.ok) throw new Error("No se pudo obtener components/footer.html");
                 return response.text();
             })
             .then(html => {
                 footerElement.innerHTML = html;
                 marcarPaginaActivaFooter();
             })
-            .catch(error => console.error("Error al cargar el footer:", error));
+            .catch(error => console.error("Error cargando el footer:", error));
     }
 });
 
 function inicializarLogicaNavegacion() {
-    // --- LÓGICA MODO CLARO / OSCURO ---
+    // --- LÓGICA DEL BOTÓN INTERRUPTOR (CLARO / OSCURO) ---
     const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
     const themeToggleBtn = document.getElementById('theme-toggle');
 
     if (document.documentElement.classList.contains('dark')) {
-        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleLightIcon?.classList.remove('hidden');
     } else {
-        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleDarkIcon?.classList.remove('hidden');
     }
 
     if (themeToggleBtn) {
@@ -57,7 +57,7 @@ function inicializarLogicaNavegacion() {
         });
     }
 
-    // --- MENÚ MÓVIL HAMBURGUESA ---
+    // --- LÓGICA DEL MENÚ DE TELÉFONOS (HAMBURGUESA) ---
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const navMenuLinks = document.getElementById('nav-menu-links');
 
@@ -68,20 +68,20 @@ function inicializarLogicaNavegacion() {
         });
     }
 
-    // --- MARCAR PESTAÑA ACTIVA EN NAVBAR ---
+    // --- DETECTAR Y MARCAR PESTAÑA ACTIVA EN NAVBAR ---
     const paginaActual = window.location.pathname.split("/").pop();
     if (paginaActual === "index.html" || paginaActual === "") {
-        marcarActivoNavbar("link-inicio");
+        marcarActivo("link-inicio");
     } else if (paginaActual === "nosotros.html") {
-        marcarActivoNavbar("link-nosotros");
+        marcarActivo("link-nosotros");
     } else if (paginaActual === "productos.html") {
-        marcarActivoNavbar("link-productos");
+        marcarActivo("link-productos");
     } else if (paginaActual === "contactenos.html") {
-        marcarActivoNavbar("link-contacto");
+        marcarActivo("link-contacto");
     }
 }
 
-function marcarActivoNavbar(idElemento) {
+function marcarActivo(idElemento) {
     const link = document.getElementById(idElemento);
     if (link) {
         link.className = "text-brandGreen border-b-2 border-brandGreen pb-1";
