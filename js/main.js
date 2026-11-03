@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(error => console.error("Error al cargar la barra de navegación:", error));
     }
 
-    // 2. Cargar Footer dinámico
+    // 2. Cargar Footer dinámico 123
     const footerElement = document.getElementById("global-footer");
     if (footerElement) {
         fetch("components/footer.html")
